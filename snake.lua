@@ -27,46 +27,26 @@ function Snake:update(dt)
    
    if self.dt == self.delay or self.dt > self.delay then
       
+      i = self.currentSnakeSize
+      while i ~= 1 do
+         self.snakeContainer[i].x = self.snakeContainer[i-1].x
+         self.snakeContainer[i].y = self.snakeContainer[i-1].y
+         i = i - 1
+      end   
+
       if self.state == "down" then         
-         i = self.currentSnakeSize
-         while i ~= 1 do
-            self.snakeContainer[i].x = self.snakeContainer[i-1].x
-            self.snakeContainer[i].y = self.snakeContainer[i-1].y
-            i = i - 1
-         end
          self.snakeContainer[1].y = self.snakeContainer[1].y + 10
          
       elseif self.state == "up" then
-         
-          i = self.currentSnakeSize
-         while i ~= 1 do
-            self.snakeContainer[i].x = self.snakeContainer[i-1].x
-            self.snakeContainer[i].y = self.snakeContainer[i-1].y
-            i = i - 1
-         end
          self.snakeContainer[1].y = self.snakeContainer[1].y - 10
          
       elseif self.state == "right" then
-
-          i = self.currentSnakeSize
-         while i ~= 1 do
-            self.snakeContainer[i].x = self.snakeContainer[i-1].x
-            self.snakeContainer[i].y = self.snakeContainer[i-1].y
-            i = i - 1
-         end
          self.snakeContainer[1].x = self.snakeContainer[1].x + 10
          
       elseif self.state == "left" then
-
-          i = self.currentSnakeSize
-         while i ~= 1 do
-            self.snakeContainer[i].x = self.snakeContainer[i-1].x
-            self.snakeContainer[i].y = self.snakeContainer[i-1].y
-            i = i - 1
-         end
          self.snakeContainer[1].x = self.snakeContainer[1].x - 10
-         
-      end
+      end 
+      
       self.dt = 0
    end
 end
