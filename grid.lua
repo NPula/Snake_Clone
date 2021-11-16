@@ -22,5 +22,4 @@ function Grid:draw(r, g, b)
          love.graphics.rectangle("line", ((i - 1) * self.sizeX) + self.spaceX, ((j - 1) * self.sizeY) + self.spaceY, self.sizeX, self.sizeY)
       end
    end
-   
 end

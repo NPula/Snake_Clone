@@ -1,1 +1,1 @@
-# Snake_Clone
+# A simple clone of the classic game Snake.
